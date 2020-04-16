@@ -1,15 +1,23 @@
 /* eslint linebreak-style: ["error","windows"] */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {
+  Nav, NavItem,
+  Grid,
+} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+
 import Contents from './contents.jsx';
 
 function NavBar() {
   return (
-    <nav>
-      <NavLink exact to="/">Home</NavLink>
-      {' | '}
-      <NavLink to="/products">Product List</NavLink>
-    </nav>
+    <Nav>
+      <LinkContainer exact to="/">
+        <NavItem>Home</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/products">
+        <NavItem>Prodcut List</NavItem>
+      </LinkContainer>
+    </Nav>
   );
 }
 
@@ -17,7 +25,9 @@ export default function Page() {
   return (
     <div>
       <NavBar />
-      <Contents />
+      <Grid fluid>
+        <Contents />
+      </Grid>
     </div>
   );
 }
