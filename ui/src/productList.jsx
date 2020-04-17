@@ -1,6 +1,5 @@
 /* eslint linebreak-style: ["error","windows"] */
 /* eslint "react/jsx-no-undef": "off" */
-// import ProductFilter from './productFilter.jsx';
 import React from 'react';
 import { Label, Panel } from 'react-bootstrap';
 import ProductTable from './productTable.jsx';
@@ -109,7 +108,7 @@ export default class ProductList extends React.Component {
         <h1><Label>My Product Inventory</Label></h1>
         <Panel>
           <Panel.Heading>
-            <Panel.Title toggle>See all available products</Panel.Title>
+            <Panel.Title>All available products</Panel.Title>
           </Panel.Heading>
           <Panel.Body>
             <ProductTable products={products} deleteProduct={this.deleteProduct} />

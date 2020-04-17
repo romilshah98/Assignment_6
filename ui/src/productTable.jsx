@@ -6,7 +6,7 @@ import {
   Table,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const deleteTooltip = (
   <Tooltip id="delete-tooltip" placement="top">Delete Product</Tooltip>
@@ -14,6 +14,10 @@ const deleteTooltip = (
 
 const editTooltip = (
   <Tooltip id="edit-tooltip" placement="top">Edit Product</Tooltip>
+);
+
+const viewTooltip = (
+  <Tooltip id="view-tooltip" placement="top">View Product</Tooltip>
 );
 
 const ProductRow = withRouter(({ product, deleteProduct, index }) => (
@@ -24,7 +28,15 @@ const ProductRow = withRouter(({ product, deleteProduct, index }) => (
       {product.Price}
     </td>
     <td>{product.Category}</td>
-    <td><Link to={`/img/${product.Image}`}>View</Link></td>
+    <td>
+      <LinkContainer to={`/img/${product.Image}`}>
+        <OverlayTrigger delayShow={1000} overlay={viewTooltip}>
+          <Button bsStyle="primary">
+            <Glyphicon glyph="eye-open" />
+          </Button>
+        </OverlayTrigger>
+      </LinkContainer>
+    </td>
     <td>
       <LinkContainer to={`/edit/${product.id}`}>
         <OverlayTrigger delayShow={1000} overlay={editTooltip}>

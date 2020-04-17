@@ -2,7 +2,8 @@
 import React from 'react';
 import {
   Nav, NavItem,
-  Grid,
+  Navbar, Grid,
+  Glyphicon,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -10,14 +11,34 @@ import Contents from './contents.jsx';
 
 function NavBar() {
   return (
-    <Nav>
-      <LinkContainer exact to="/">
-        <NavItem>Home</NavItem>
-      </LinkContainer>
-      <LinkContainer to="/products">
-        <NavItem>Prodcut List</NavItem>
-      </LinkContainer>
-    </Nav>
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>Product Tracker</Navbar.Brand>
+      </Navbar.Header>
+      <Nav>
+        <LinkContainer exact to="/">
+          <NavItem>Home</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/products">
+          <NavItem>Product List</NavItem>
+        </LinkContainer>
+      </Nav>
+    </Navbar>
+  );
+}
+function Footer() {
+  return (
+    <small>
+      <p className="text-center">
+        <Glyphicon glyph="copyright-mark" />
+        <br />
+        ROMIL SHAH
+        <br />
+        <a href="https://github.com/romilshah98/Assignment_6" target="blank">
+          GitHub repository
+        </a>
+      </p>
+    </small>
   );
 }
 
@@ -28,6 +49,7 @@ export default function Page() {
       <Grid fluid>
         <Contents />
       </Grid>
+      <Footer />
     </div>
   );
 }
