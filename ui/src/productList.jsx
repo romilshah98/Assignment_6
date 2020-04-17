@@ -106,6 +106,7 @@ export default class ProductList extends React.Component {
     return (
       <div>
         <h1><Label>My Product Inventory</Label></h1>
+        <br />
         <Panel>
           <Panel.Heading>
             <Panel.Title>All available products</Panel.Title>
